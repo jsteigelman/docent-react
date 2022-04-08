@@ -1,9 +1,9 @@
 import getMetRecord from './../requests/metApi'
 
-const ArtworkCataloging = () => {
+const ArtworkCataloging = ({api}) => {
   const ArtworkCatalogingStyle = {
     alignItems: 'center',
-    backgroundColor: 'orange',
+    backgroundColor: 'white',
     boxSizing: 'border-box',
     display: 'flex',
     flex: 1,
@@ -60,10 +60,9 @@ const ArtworkCataloging = () => {
         </table>
       </div>
       <div className='buttonContainer'>
-        <button className='artworkRecordButton' >
+        <button className='artworkRecordButton' onClick={api}>
           Show me another work
         </button>
-        <button onClick={getMetRecord}>Hello</button>
 
         <p id='sendEmailLink'>
           <a id='emailLink'>Email a link to this artwork</a>

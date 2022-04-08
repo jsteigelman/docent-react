@@ -1,4 +1,4 @@
-const Nav = () => {
+const Nav = ({ setApi, changeApi }) => {
   const navStyle__container = {
     alignItems: 'center',
     color: 'light-gray',
@@ -17,6 +17,7 @@ const Nav = () => {
   }
 
   const navStyle__linksContainer__links = {
+    cursor: 'pointer',
     fontSize: 30,
     padding: 0,
     margin: 0,
@@ -33,8 +34,8 @@ const Nav = () => {
   return (
     <div style={navStyle__container}>
       <div style={navStyle__linksContainer}>
-        <p style={navStyle__linksContainer__links}>Met Museum</p>
-        <p style={navStyle__linksContainer__links}>Art Institute Chicago</p>
+        <p style={navStyle__linksContainer__links} onClick={() => changeApi('Met')}>Met Museum</p>
+        <p style={navStyle__linksContainer__links} onClick={() => changeApi('AIC')}>Art Institute Chicago</p>
       </div>
       <div style={horizontalLine}></div>
     </div>
