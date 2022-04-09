@@ -7,7 +7,6 @@
   --font-size-artist-bio: 20px;
   --font-weight-artist: 500;
   --font-size-caption: 18px;
-  --padding-vertical-header: 28px;
   --height-header: 80px;
   --font-family: 'Inter', Helvetica, Arial, sans-serif;
 }
@@ -23,6 +22,15 @@
   flex-direction: column;
 
   font-weight: 400;
+}
+
+.innerContainer--artworkSection {
+    display: flex;
+    justify-content: space-evenly;
+    margin: var(--margin-inner-container);
+    height: 100%;
+    max-height: calc(100% - var(--height-header));
+    overflow: hidden;
 }
 
 /* nav */
@@ -44,11 +52,30 @@
   cursor: pointer;
 }
 
-.activeMuseumButton {
+button.activeMuseumButton {
   color: black;
 }
 
 /* artwork cataloging */
+
+.innerContainer--headerSection {
+  padding: 0px;
+  padding-left: var(--margin-inner-container);
+  padding-right: var(--margin-inner-container);
+
+  font-size: 30px;
+  font-family: var(--font-family);
+  height: var(--height-header);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.innerContainer--headerSection p {
+  padding: 18px 0 10px 0;
+  margin: 0;
+  vertical-align: center;
+}
 
 #captionContainer--artistName {
   font-size: var(--font-size-artist-name);
@@ -63,8 +90,17 @@
   text-transform: uppercase;
 }
 
-.outerCaptionContainer {
-  background-color: white;
+/* .containerLeft {
+  flex: 1 1 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #F8F5F9;
+} */
+
+.containerRight {
+  /* background-color: white;
   align-items: left;
   box-sizing: border-box;
   display: flex;
@@ -74,7 +110,15 @@
   margin-left: 20;
   justify-content: space-between;
   width: 100%;
-  padding-left: 20px;
+  padding-left: 20px; */
+
+  box-sizing: border-box;
+  padding: 0 20px;
+  flex: 1 1 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
 }
 
@@ -83,6 +127,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .captionArtistContainer p, h1 {
@@ -104,6 +149,13 @@
   height: 100%;
   flex-direction: row;
   width: 100%;
+
+  display: flex;
+    justify-content: space-evenly;
+    /* margin: var(--margin-inner-container); */
+    height: 100%;
+    max-height: calc(100% - var(--height-header));
+    overflow: hidden;
 }
 
 #captionMore {
@@ -146,6 +198,10 @@ td {
 
 /* get artwork button */
 
+.getArtworkButtonContainer {
+  width: 100%;
+}
+
 .getArtworkButton {
   color: white;
   background-color: black;
@@ -156,6 +212,16 @@ td {
   padding: 20px 0;
   text-transform: uppercase;
   width: 100%;
+
+  background-color: #fff;
+  padding: 20px 0;
+  width: 100%;
+  font-size: 16px;
+  color: #000;
+  font-family: var(--font-family);
+  margin-bottom: var(--margin-caption);
+  text-transform: uppercase;
+  border: 2px solid black;
 }
 
 .getArtworkButton:hover {
@@ -166,10 +232,16 @@ td {
 
 /* send email button */
 
+#sendEmailLink {
+  margin: 0;
+}
+
 #sendEmailLink a {
   color: black;
 }
 
 #emailLink {
   white-space: pre-wrap;
+  margin: 0;
 }
+

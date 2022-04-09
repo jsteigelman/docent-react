@@ -8,16 +8,20 @@ import getAicRecord from '../src/requests/aicApi'
 
 const App = () => {
   const [api, setApi] = useState(null)
+  const [museum, setMuseum] = useState('Met')
 
   useEffect(() => {
     changeApi('Met')
   }, [])
 
   const changeApi = (museum) => {
+
     console.log('changeApi is running!')
     if (museum === 'Met') {
-      return setApi(getMetRecord)
+      setMuseum('Met')
+      setApi(getMetRecord)
     } else if (museum === 'AIC') {
+      setMuseum('AIC')
       setApi(getAicRecord)
     }
   }
@@ -25,10 +29,10 @@ const App = () => {
   return (
     <div>
       <div className='innerContainer'>
-        <Nav setApi={setApi} changeApi={changeApi} />
+        <Nav museum={museum} changeApi={changeApi} />
         <div className='artworkContainer'>
         <ArtworkImage api={api} />
-        <ArtworkCataloging setApi={setApi} api={api} changeApi={changeApi} />
+        <ArtworkCataloging api={api} museum={museum} changeApi={changeApi} />
         </div>
       </div>
     </div>

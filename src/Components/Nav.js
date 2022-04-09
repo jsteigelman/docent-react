@@ -1,4 +1,4 @@
-const Nav = ({ setApi, changeApi }) => {
+const Nav = ({ museum, changeApi }) => {
   const navStyle__container = {
     alignItems: 'center',
     color: 'light-gray',
@@ -24,19 +24,37 @@ const Nav = ({ setApi, changeApi }) => {
     width: '100%'
   }
 
-  const setActiveButton = () => {
-    const previous = document.querySelector('activeMuseumButton');
-    if (previous) previous.classList.remove('.activeMuseumButton')
+  const activeButtonStyle = {
+    color: 'black'
+  }
 
-    const activeLink = document.querySelector('.activeMuseumButton')
-    activeLink.className = 'activeMuseumButton'
+  const inactiveButtonStyle = {
+    color: 'lightgray'
+  }
+
+  const setActiveButton = (museumButton) => {
+
+    // remove existing active class 
+    const previous = document.querySelector('.activeMuseumButton');
+    if (previous) {
+      previous.classList.remove('activeMuseumButton')
+    }
+
+    // assign new active class
+    if (museumButton === 'metButton') {
+      const activeButton = document.querySelector('.metButton')
+      activeButton.className = 'activeMuseumButton'
+    } else if (museumButton === 'aicButton') {
+      const activeButton = document.querySelector('.aicButton')
+      activeButton.className = 'activeMuseumButton'
+    }
   } 
 
   return (
     <div style={navStyle__container} className="navStyle__container">
       <div style={navStyle__linksContainer} className="navStyle__linksContainer">
-        <button className="navStyle__linksContainer__link" onClick={() => changeApi('Met')}>Met Museum</button>
-        <button className="navStyle__linksContainer__link" onClick={() => changeApi('AIC')}>Art Institute Chicago</button>
+        <button className="navStyle__linksContainer__link metButton" style={museum === 'Met' ? activeButtonStyle : inactiveButtonStyle} onClick={() => changeApi('Met')}>Met Museum</button>
+        <button className="navStyle__linksContainer__link aicButton" style={museum === 'AIC' ? activeButtonStyle : inactiveButtonStyle} onClick={() => changeApi('AIC')}>Art Institute Chicago</button>
       </div>
       <div style={horizontalLine}></div>
     </div>

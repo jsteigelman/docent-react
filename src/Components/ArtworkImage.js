@@ -4,6 +4,11 @@ const ArtworkImage = () => {
     flex: 1,
     height: '100%',
     width: '100%',
+
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+
   }
 
   const imageContainerStyle = {
@@ -18,7 +23,7 @@ const ArtworkImage = () => {
   }
 
   return (
-    <div style={artworkImageStyle}>
+    <div className="containerLeft" style={artworkImageStyle}>
         <div className="imageContainer--text"></div>
       <div className='imageContainer' style={imageContainerStyle}></div>
     </div>
