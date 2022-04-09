@@ -1,26 +1,12 @@
 import getMetRecord from './../requests/metApi'
 
 const ArtworkCataloging = ({ setApi, changeApi, api }) => {
-  const ArtworkCatalogingStyle = {
-    alignItems: 'center',
-    backgroundColor: 'white',
-    boxSizing: 'border-box',
-    display: 'flex',
-    flex: 1,
-    flexDirection: 'column',
-    height: '100%',
-    paddingLeft: 20,
-    paddingRight: 20,
-    justifyContent: 'space-between',
-    width: '100%',
-  }
 
   return (
-    <div style={ArtworkCatalogingStyle}>
+    <div className="outerCaptionContainer">
       <div className='captionArtistContainer'>
         <h1 id='captionContainer--artistName'></h1>
         <h3 id='captionContainer--artistBio'></h3>
-      </div>
       <div className='captionContainer'>
         <table className='captionTable hideElement'>
         <tbody>
@@ -59,8 +45,10 @@ const ArtworkCataloging = ({ setApi, changeApi, api }) => {
           </tbody>
         </table>
       </div>
+    </div>
+
       <div className='buttonContainer'>
-        <button className='artworkRecordButton' onClick={() => changeApi('Met')}>
+        <button className='getArtworkButton' onClick={() => changeApi('Met')}>
           Show me another work
         </button>
         <p id='sendEmailLink'>

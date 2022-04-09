@@ -13,7 +13,7 @@ const ArtworkImage = () => {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100%'
+    maxHeight: '100%'
 
   }
 

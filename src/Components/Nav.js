@@ -16,26 +16,27 @@ const Nav = ({ setApi, changeApi }) => {
     width: '100%',
   }
 
-  const navStyle__linksContainer__links = {
-    cursor: 'pointer',
-    fontSize: 30,
-    padding: 0,
-    margin: 0,
-  }
-
   const horizontalLine = {
-    backgroundColor: 'lightgray',
+    backgroundColor: '#E5E5E5',
     height: 2,
     padding: 0,
     marginBottom: 20,
     width: '100%'
   }
 
+  const setActiveButton = () => {
+    const previous = document.querySelector('activeMuseumButton');
+    if (previous) previous.classList.remove('.activeMuseumButton')
+
+    const activeLink = document.querySelector('.activeMuseumButton')
+    activeLink.className = 'activeMuseumButton'
+  } 
+
   return (
-    <div style={navStyle__container}>
-      <div style={navStyle__linksContainer}>
-        <p style={navStyle__linksContainer__links} onClick={() => changeApi('Met')}>Met Museum</p>
-        <p style={navStyle__linksContainer__links} onClick={() => changeApi('AIC')}>Art Institute Chicago</p>
+    <div style={navStyle__container} className="navStyle__container">
+      <div style={navStyle__linksContainer} className="navStyle__linksContainer">
+        <button className="navStyle__linksContainer__link" onClick={() => changeApi('Met')}>Met Museum</button>
+        <button className="navStyle__linksContainer__link" onClick={() => changeApi('AIC')}>Art Institute Chicago</button>
       </div>
       <div style={horizontalLine}></div>
     </div>
