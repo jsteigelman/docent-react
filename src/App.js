@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Nav from '../src/Components/Nav'
 import ArtworkImage from '../src/Components/ArtworkImage'
@@ -6,18 +6,20 @@ import ArtworkCataloging from '../src/Components/ArtworkCataloging'
 import getMetRecord from '../src/requests/metApi'
 import getAicRecord from '../src/requests/aicApi'
 
-function App() {
-  const [api, setApi] = useState(() => getMetRecord)
-  
+const App = () => {
+  const [api, setApi] = useState(null)
+
+  useEffect(() => {
+    changeApi('Met')
+  }, [])
+
   const changeApi = (museum) => {
     console.log('changeApi is running!')
     if (museum === 'Met') {
-      setApi(() => getMetRecord)
+      return setApi(getMetRecord)
     } else if (museum === 'AIC') {
-      setApi(() => getAicRecord)
+      setApi(getAicRecord)
     }
-
-    return api
   }
 
   return (
@@ -26,7 +28,7 @@ function App() {
         <Nav setApi={setApi} changeApi={changeApi} />
         <div className='artworkContainer'>
         <ArtworkImage api={api} />
-        <ArtworkCataloging api={api} />
+        <ArtworkCataloging setApi={setApi} api={api} changeApi={changeApi} />
         </div>
       </div>
     </div>
