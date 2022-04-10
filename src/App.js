@@ -4,6 +4,7 @@ import Nav from '../src/Components/Nav'
 import ArtworkImage from '../src/Components/ArtworkImage'
 import ArtworkCataloging from '../src/Components/ArtworkCataloging'
 import Modal from '../src/Components/Modal'
+import ImageModal from '../src/Components/ImageModal'
 
 import getMetRecord from '../src/requests/metApi'
 import getAicRecord from '../src/requests/aicApi'
@@ -12,6 +13,7 @@ const App = () => {
   const [api, setApi] = useState(null)
   const [museum, setMuseum] = useState('Met')
   const [modal, setModal] = useState(true)
+  const [imageModal, setImageModal] = useState(false)
 
   useEffect(() => {
     changeApi('Met')
@@ -29,15 +31,17 @@ const App = () => {
   }
 
   const displayModal = modal ? <Modal setModal={setModal} /> : ''
+  const displayImageModal = imageModal ? <ImageModal /> : ''
 
   return (
     <div>
       {displayModal}
-
+      {displayImageModal}
+      <ImageModal imageModal={imageModal} setImageModal={setImageModal} />
       <div className='innerContainer'>
         <Nav museum={museum} changeApi={changeApi} />
         <div className='artworkContainer'>
-          <ArtworkImage api={api} />
+          <ArtworkImage imageModal={imageModal} setImageModal={setImageModal} />
           <ArtworkCataloging api={api} museum={museum} changeApi={changeApi} />
         </div>
       </div>

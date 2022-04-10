@@ -49,6 +49,16 @@ const getMetRecord = async () => {
       const artworkImage = document.createElement('img')
       artworkImage.src = artworkRecord.primaryImageSmall
 
+      // // update image
+      imageSection.appendChild(artworkImage)
+
+      // update image modal
+      const imageModal = document.querySelector('.imageModal')
+      imageModal.innerHTML = ''
+      const modalImage = document.createElement('img')
+      modalImage.src = artworkRecord.primaryImage
+      imageModal.appendChild(modalImage)
+
       // update table with artwork data
       document.querySelector('#captionContainer--artistName').innerHTML =
         artworkRecord.artistDisplayName
@@ -69,15 +79,12 @@ const getMetRecord = async () => {
       const moreInfoLink = document.querySelector('#captionMore')
       moreInfoLink.href = artworkRecord.objectURL
 
-      // update image
-      imageSection.appendChild(artworkImage)
-
       // add support for sharing artwork record by email
       const emailLink = document.querySelector('#emailLink')
       const emailBody = encodeURIComponent(
-        `Check out this artwork I found on ArtFlash:\n\n${artworkRecord.title} (${artworkRecord.objectDate}) by ${artworkRecord.artistDisplayName}\n${artworkRecord.objectURL}\n`
+        `Check out this artwork I found on Docent:\n\n${artworkRecord.title} (${artworkRecord.objectDate}) by ${artworkRecord.artistDisplayName}\n${artworkRecord.objectURL}\n`
       )
-      emailLink.href = `mailto:?body=${emailBody}&subject=Check out this artwork I found on ArtFlash`
+      emailLink.href = `mailto:?body=${emailBody}&subject=Check out this artwork I found on Docent`
     })
 }
 

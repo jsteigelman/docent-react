@@ -1,4 +1,6 @@
-const ArtworkImage = () => {
+import ImageModal from './ImageModal'
+
+const ArtworkImage = ({ imageModal, setImageModal }) => {
   const artworkImageStyle = {
     backgroundColor: '#F8F5F9',
     flex: 1,
@@ -23,7 +25,7 @@ const ArtworkImage = () => {
   }
 
   return (
-    <div className="containerLeft" style={artworkImageStyle}>
+    <div className="containerLeft" style={artworkImageStyle} onClick={() => setImageModal(!imageModal)}>
         <div className="imageContainer--text"></div>
       <div className='imageContainer' style={imageContainerStyle}></div>
     </div>

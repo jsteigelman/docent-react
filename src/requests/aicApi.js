@@ -20,6 +20,13 @@ const getAicRecord = async () => {
       artworkImage.src = imageUrl
       imageSection.appendChild(artworkImage)
 
+      // update image modal
+      const imageModal = document.querySelector('.imageModal')
+      imageModal.innerHTML = ''
+      const modalImage = document.createElement('img')
+      modalImage.src = imageUrl
+      imageModal.appendChild(modalImage)
+
       // get artwork record details        
       artworkRecord = artworkRecord.data[0]
       console.log('this is the artwork record: ', artworkRecord)
@@ -63,9 +70,9 @@ const getAicRecord = async () => {
       // add support for sharing artwork record by email
       const emailLink = document.querySelector('#emailLink')
       const emailBody = encodeURIComponent(
-        `Check out this artwork I found on ArtFlash:\n\n${artworkRecord.title} (${artworkRecord.date_display}) by ${artworkRecord.artist_title}\n${aicPage}\n`
+        `Check out this artwork I found on Docent:\n\n${artworkRecord.title} (${artworkRecord.date_display}) by ${artworkRecord.artist_title}\n${aicPage}\n`
       )
-      emailLink.href = `mailto:?body=${emailBody}&subject=Check out this artwork I found on ArtFlash`
+      emailLink.href = `mailto:?body=${emailBody}&subject=Check out this artwork I found on Docent`
     })
 }
 

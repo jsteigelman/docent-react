@@ -1,6 +1,4 @@
-import getMetRecord from './../requests/metApi'
 import GetArtworkButton from './GetArtworkButton'
-import Details from './Details'
 import DetailsBody from './DetailsBody'
 
 const ArtworkCataloging = ({ changeApi, museum }) => {
