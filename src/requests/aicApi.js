@@ -1,9 +1,8 @@
 const getAicRecord = async () => {
   const randomPage = Math.floor(Math.random() * 999)
-  const test = `https://api.artic.edu/api/v1/artworks?page=${randomPage}&limit=1`
-  console.log('The test url is: ', test)
+  const url = `https://api.artic.edu/api/v1/artworks?page=${randomPage}&limit=1`
   
-  fetch(test)
+  fetch(url)
     .then(response => response.json())
     .then(jsonResponse => jsonResponse)
     .then((artworkRecord) => {
@@ -47,15 +46,24 @@ const getAicRecord = async () => {
         artworkRecord.credit_line
       document.querySelector('#captionCollection').innerHTML =
         'The Art Institute of Chicago'
+
+      // get artist bio
+      let artistBio = artworkRecord.artist_display
+      const searchTerm = artworkRecord.artist_title
+      const indexOfFirst = artistBio.indexOf(searchTerm)
+      artistBio = artistBio.slice(indexOfFirst + searchTerm.length)
       document.querySelector('#captionContainer--artistBio').innerHTML =
-        artworkRecord.artist_display
+      artistBio
+
+      // get link to artwork on AIC website
+      const aicPage = `https://www.artic.edu/artworks/${artworkRecord.id}`
       const moreInfoLink = document.querySelector('#captionMore')
-      moreInfoLink.href = artworkRecord.objectURL
+      moreInfoLink.href = aicPage
   
       // add support for sharing artwork record by email
       const emailLink = document.querySelector('#emailLink')
       const emailBody = encodeURIComponent(
-        `Check out this artwork I found on ArtFlash:\n\n${artworkRecord.title} (${artworkRecord.date_display}) by ${artworkRecord.artist_title}\n${artworkRecord.objectURL}\n`
+        `Check out this artwork I found on ArtFlash:\n\n${artworkRecord.title} (${artworkRecord.date_display}) by ${artworkRecord.artist_title}\n${aicPage}\n`
       )
       emailLink.href = `mailto:?body=${emailBody}&subject=Check out this artwork I found on ArtFlash`
     })
