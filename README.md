@@ -14,8 +14,8 @@ This website is currently in progress! Docent presents an artwork record (contai
 
 ## Built With
 * [React](https://reactjs.org/) - React is a JavaScript library for building user interfaces
-* [The Metropolitan Museum of Art Collection API](https://metmuseum.github.io/) - API to retrieve object records for artwork in the collection of the Metropolitan Museum of Art
-* [Art Institute of Chicago API](https://api.artic.edu/docs/#introduction) - API to retrieve object records for artwork in the collection of the Art Institute of Chicago
+* [The Metropolitan Museum of Art Collection API](https://metmuseum.github.io/) - API to retrieve artwork records from the collection of the Metropolitan Museum of Art
+* [Art Institute of Chicago API](https://api.artic.edu/docs/#introduction) - API to retrieve artwork records from the collection of the Art Institute of Chicago
 
 ## Website Preview
 <img width="900" alt="Docent" src="https://user-images.githubusercontent.com/65603938/162642369-7fae6457-0d3f-48aa-b944-cd471d3fb6a0.png">
