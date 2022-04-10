@@ -1,28 +1,28 @@
 const getAicRecord = async () => {
-  const artInstituteChicagoUrl = 'https://api.artic.edu/api/v1/artworks'
-
-  fetch(artInstituteChicagoUrl)
-    .then((response) => response.json())
-    .then((response) => {
-      const randomNumber = Math.floor(Math.random() * 12)
-      const randomlySelectedRecord = response.data[randomNumber]
-      return randomlySelectedRecord
-    })
-    .then((recordNumber) => {
-      const objectRecordUrl = artInstituteChicagoUrl
-        .concat('/')
-        .concat(recordNumber.id)
-      console.log('url: ', objectRecordUrl)
-      return fetch(objectRecordUrl)
-    })
-    .then((result) => result.json())
+  const randomPage = Math.floor(Math.random() * 999)
+  const test = `https://api.artic.edu/api/v1/artworks?page=${randomPage}&limit=1`
+  console.log('The test url is: ', test)
+  
+  fetch(test)
+    .then(response => response.json())
+    .then(jsonResponse => jsonResponse)
     .then((artworkRecord) => {
-      const artworkRecordImage = artworkRecord.config.iiif_url
-        .concat('/')
-        .concat(artworkRecord.data.image_id)
-        .concat('/full/843,/0/default.jpg')
-      console.log('Here is the image URL: ', artworkRecordImage)
-      artworkRecord = artworkRecord.data
+              
+      // get artwork image
+      const image_id = artworkRecord.data[0].image_id
+      const imageUrl = `https://www.artic.edu/iiif/2/${image_id}/full/843,/0/default.jpg`
+
+      // delete the existing image
+      const imageSection = document.querySelector('.imageContainer')
+      imageSection.innerHTML = ''
+      
+      // save artwork image
+      const artworkImage = document.createElement('img')
+      artworkImage.src = imageUrl
+      imageSection.appendChild(artworkImage)
+
+      // get artwork record details        
+      artworkRecord = artworkRecord.data[0]
       console.log('this is the artwork record: ', artworkRecord)
 
       // remove the start page
@@ -30,16 +30,8 @@ const getAicRecord = async () => {
         document.querySelector('.startScreen').remove()
       }
 
-      // delete the existing image
-      const imageSection = document.querySelector('.imageContainer')
-      imageSection.innerHTML = ''
-
       // show caption table
       document.querySelector('.captionTable').classList.remove('hideElement')
-
-      // save artwork image
-      const artworkImage = document.createElement('img')
-      artworkImage.src = artworkRecordImage
 
       // update table with artwork data
       document.querySelector('#captionContainer--artistName').innerHTML =
@@ -59,10 +51,7 @@ const getAicRecord = async () => {
         artworkRecord.artist_display
       const moreInfoLink = document.querySelector('#captionMore')
       moreInfoLink.href = artworkRecord.objectURL
-
-      // update image
-      imageSection.appendChild(artworkImage)
-
+  
       // add support for sharing artwork record by email
       const emailLink = document.querySelector('#emailLink')
       const emailBody = encodeURIComponent(
