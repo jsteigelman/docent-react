@@ -243,3 +243,61 @@ td {
 #emailLink:hover {
   color: var(--details-hover-color);
 }
+
+/* modal */
+
+.modal {
+  align-items: center;
+  /* background-color: #FEE333; */
+  background-color: rgba(254, 227, 51, 0.97);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+}
+
+.modal__text {
+  align-items: center;
+  background-color: #F8F4F3;
+  border: 3px solid black;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  padding: 20px;
+  text-align: center;
+  width: 600px;
+}
+
+.modal__text h1 {
+  font-size: 56px;
+  font-weight: 500;
+  padding: 0;
+  margin: 0;
+}
+
+.modal__text p {
+  font-size: 24px;
+  padding: 12px 0;
+  margin: 0;
+}
+
+.modal__text button {
+  background-color: black;
+  border: 2px solid black;
+  color: #fff;
+  font-family: var(--font-family);
+  font-size: 16px;
+  padding: 20px 0;
+  margin-top: 20px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+.modal__text button:hover {
+  background-color: white;
+  border: 2px solid black;
+  color: black;
+}
