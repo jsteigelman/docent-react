@@ -1,70 +1,21 @@
-# Getting Started with Create React App
+# Docent
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
+This website is currently in progress! Docent presents an artwork record (containing the image and full cataloging information) to the curious user. The artworks are selected from the collections of the Metropolitan Museum of Art and the Art Institute of Chicago.
 
-## Available Scripts
+## Live Site URL
+[https://docent.netlify.app/](https://docent.netlify.app/)
 
-In the project directory, you can run:
+## Functionality
+* User can retrieve an artwork record from the collection of the Metropolitan Museum of Art
+* User can retrieve an artwork record from the collection of the Art Institute of Chicago
+* User can access information including the image, artist, title, date, medium, dimensions, and collection for each object record
+* User can generate an email that includes information about the current artwork including a link to its page on the museum website
 
-### `npm start`
+## Built With
+* [React](https://reactjs.org/) - React is a JavaScript library for building user interfaces
+* [The Metropolitan Museum of Art Collection API](https://metmuseum.github.io/) - API to retrieve object records for artwork in the collection of the Metropolitan Museum of Art
+* [Smithsonian Institution Open Access API](https://edan.si.edu/openaccess/apidocs/) - API to retrieve object records for artwork in the collection of the Smithsonian Institution
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Website Preview
+<img width="900" alt="Preview_docent" src="https://user-images.githubusercontent.com/65603938/162642343-4acdc8d4-b0ea-4b95-bb15-93584ca41e82.png">
