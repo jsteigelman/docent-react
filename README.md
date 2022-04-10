@@ -18,4 +18,4 @@ This website is currently in progress! Docent presents an artwork record (contai
 * [Smithsonian Institution Open Access API](https://edan.si.edu/openaccess/apidocs/) - API to retrieve object records for artwork in the collection of the Smithsonian Institution
 
 ## Website Preview
-<img width="900" alt="Preview_docent" src="https://user-images.githubusercontent.com/65603938/162642343-4acdc8d4-b0ea-4b95-bb15-93584ca41e82.png">
+<img width="900" alt="Docent" src="https://user-images.githubusercontent.com/65603938/162642369-7fae6457-0d3f-48aa-b944-cd471d3fb6a0.png">
