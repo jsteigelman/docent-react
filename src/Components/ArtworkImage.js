@@ -26,7 +26,7 @@ const ArtworkImage = ({ imageModal, setImageModal }) => {
 
   return (
     <div className="containerLeft" style={artworkImageStyle} onClick={() => setImageModal(!imageModal)}>
-        <div className="imageContainer--text"></div>
+      <div className="imageContainer--text"></div>
       <div className='imageContainer' style={imageContainerStyle}></div>
     </div>
   )

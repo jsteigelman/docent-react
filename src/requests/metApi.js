@@ -5,7 +5,8 @@ const getMetRecord = async () => {
 
   const metUrl = baseUrl.concat(artworkRecords)
   
-  
+  const test = 'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=painting'
+
   fetch(metUrl)
     .then((response) => response.json())
     .then((data) => {
