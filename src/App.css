@@ -341,7 +341,7 @@ td {
   height: 100%;
   justify-content: center;
   object-fit: contain;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
@@ -410,6 +410,10 @@ td {
   }
 
   .modal {
+    position: absolute;
+  }
+
+  .imageModalContainer {
     position: absolute;
   }
 }
