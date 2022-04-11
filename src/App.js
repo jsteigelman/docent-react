@@ -31,12 +31,10 @@ const App = () => {
   }
 
   const displayModal = modal ? <Modal setModal={setModal} /> : ''
-  const displayImageModal = imageModal ? <ImageModal /> : ''
 
   return (
     <div>
       {displayModal}
-      {displayImageModal}
       <ImageModal imageModal={imageModal} setImageModal={setImageModal} />
       <div className='innerContainer'>
         <Nav museum={museum} changeApi={changeApi} />
