@@ -1,7 +1,7 @@
 # Docent
 
 ## Description
-This website is currently in progress! Docent presents an artwork record (containing the image and full cataloging information) to the curious user. The artworks are selected from the collections of the Metropolitan Museum of Art and the Art Institute of Chicago.
+Docent presents an artwork record (containing the image and full cataloging information) to the curious user. The artworks are selected from the collections of the Metropolitan Museum of Art and the Art Institute of Chicago.
 
 ## Live Site URL
 [https://docent.netlify.app/](https://docent.netlify.app/)
